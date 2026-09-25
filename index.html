@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ballot — On-Chain Voting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>Ballot</h1>
+      <p class="tagline">One wallet, one vote — recorded on Sepolia.</p>
+    </div>
+    <button id="connectBtn" class="btn-outline">Connect Wallet</button>
+  </header>
+
+  <main class="ballot-sheet">
+
+    <section id="statusBar" class="status-bar">
+      <span id="networkStatus" class="pill pill-muted">Not connected</span>
+      <span id="votingStatus" class="pill pill-muted">—</span>
+    </section>
+
+    <section id="setupSection" class="card hidden">
+      <h2>Contract</h2>
+      <p class="hint">Paste the contract address you got from Remix after deployment.</p>
+      <div class="row">
+        <input id="contractAddress" type="text" placeholder="0x..." />
+        <button id="loadContractBtn" class="btn-primary">Load</button>
+      </div>
+    </section>
+
+    <section id="adminSection" class="card hidden">
+      <h2>Admin panel</h2>
+      <div class="row">
+        <input id="candidateName" type="text" placeholder="Candidate name" />
+        <button id="addCandidateBtn" class="btn-primary">Add candidate</button>
+      </div>
+      <button id="toggleVotingBtn" class="btn-outline small">Close voting</button>
+    </section>
+
+    <section id="candidatesSection" class="card hidden">
+      <h2>Cast your vote</h2>
+      <ul id="candidateList" class="candidate-list"></ul>
+      <p id="voteMessage" class="hint"></p>
+    </section>
+
+  </main>
+
+  <footer class="foot-note">
+    <p>Every vote is a transaction signed by your wallet and stored permanently on-chain — no vote can be edited or duplicated per address.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

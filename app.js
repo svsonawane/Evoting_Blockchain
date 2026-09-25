@@ -11,7 +11,7 @@ const CONTRACT_ABI = [
 ];
 
 const SEPOLIA_CHAIN_ID = 11155111n;
-const HARDCODED_CONTRACT_ADDRESS = "0x69EAf28d05c8d967CC0457F660ec2FDCbF05c03A";
+const HARDCODED_CONTRACT_ADDRESS = "0x3Ea6Fd519a42Ac35219fae259D6535B066FdeF4E";
 
 let provider, signer, contract, userAddress, contractAddress;
 
